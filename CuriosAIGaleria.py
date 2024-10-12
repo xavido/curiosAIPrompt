@@ -110,7 +110,7 @@ if st.session_state.start_chat:
         cur = conn.cursor()
 
         # Ejecuta una consulta SQL
-        sql = "SELECT * FROM teclaCOMIC WHERE tema = '3880328' OR tema='3880329'"
+        sql = "SELECT * FROM teclaCOMIC WHERE tema = '3880328' OR tema='3880329' AND autora !=''"
         cur.execute(sql)
 
         # Obtiene los resultados de la consulta
