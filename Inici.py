@@ -33,11 +33,11 @@ parlantPregunta = ''
 pregunta = 0
 
 with st.form("images_form"):
-  text = st.text_input("Escribe un prompt con la estructura adecuada para CuriosAI..." )
+  text = st.text_area("Escribe un prompt con la estructura adecuada para CuriosAI..." )
   submit_button = st.form_submit_button(label="Generar Imagen")
 
 if submit_button:
-  st.write("Generating Image...")
+  st.write("Generando Imagen...")
 
   response = client.images.generate(
       model="dall-e-3",
@@ -48,7 +48,7 @@ if submit_button:
   )
   for i in range(1):
     url = response.data[i].url
-    st.image(url, caption=f"Imatge: {text}", use_column_width=True)
+    st.image(url, caption=f"Prompt CuriosAI: {text}", use_column_width=True)
     res = requests.get(response.data[0].url)
     missatge ="Descriu una imatge..."
     if parlantTemaID <= 0:
