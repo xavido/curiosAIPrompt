@@ -69,9 +69,9 @@ if submit_button:
     cur = conn.cursor()
 
      # Ejecuta una consulta SQL
-    sql = "INSERT INTO teclaCOMIC (id,url,final,escena,descripcio,tema) VALUES (%s,%s,%s,%s,%s,%s)"
+    sql = "INSERT INTO teclaCOMIC (id,autora,url,final,escena,descripcio,tema) VALUES (%s,%s,%s,%s,%s,%s,%s)"
 
-    valores = (parlantID, creaName, 0, missatge, text, parlantTemaID)
+    valores = (parlantID, 'curiosai prompt',creaName, 0, missatge, text, parlantTemaID)
     cur.execute(sql, valores)
 
     # Obtiene los resultados de la consulta
