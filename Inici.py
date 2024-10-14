@@ -32,6 +32,7 @@ parlantTemaID = 0
 parlantPregunta = ''
 pregunta = 0
 
+st.image("curiosaipromptformula.png", caption="La fórmula del prompt para Dalle-3")
 with st.form("images_form"):
   text = st.text_area("Escribe un prompt con la estructura adecuada para CuriosAI..." )
   submit_button = st.form_submit_button(label="Generar Imagen")
@@ -41,7 +42,7 @@ if submit_button:
 
   response = client.images.generate(
       model="dall-e-3",
-      prompt="Haz una imagen realista" + " a partir de esta descripción:" + text + ".",
+      prompt="Haz una imagen" + " a partir de esta descripción:" + text + ".",
       size="1024x1024",
       quality="standard",
       n=1
