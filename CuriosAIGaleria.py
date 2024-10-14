@@ -160,7 +160,7 @@ if st.session_state.start_chat:
                 df['url'][i] = "https://www.xavidominguez.com/tecla/"+str(df['url'][i])
                 #st.write(df['infografia'][i])
                 listimages.append(str(df['url'][i]))
-                listcaptions.append(df['autora'][i]+":"+df['descripcio'][i])
+                listcaptions.append(df['descripcio'][i])
 
         st.image(listimages,caption=listcaptions,width=400,output_format="JPEG")
 else:
